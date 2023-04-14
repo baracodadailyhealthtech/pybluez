@@ -296,6 +296,8 @@ getsockaddrarg(PySocketSockObject *s, PyObject *args,
                 }
 
                 addr->l2_psm = htobs(addr->l2_psm);
+                addr->l2_family = AF_BLUETOOTH;
+                addr->l2_bdaddr_type = BDADDR_LE_PUBLIC;
 
                 *len_ret = sizeof *addr;
                 return 1;
